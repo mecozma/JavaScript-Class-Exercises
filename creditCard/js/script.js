@@ -99,18 +99,7 @@ function onDate(x) {
     }
 }
 
-document.getElementById('submitButton').addEventListener("click", function () {
 
-        var card = getFormData();
-        if(isCardValid(card)){
-            console.log("The Card is Valid");
-            console.log("Card Type is: ", determineCardVendor(card.creditcardnumber))
-        }
-        else{
-            console.log("It's not valid");
-        }
-
-    });
 
 
 

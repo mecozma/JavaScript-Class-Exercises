@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Boilerplate</title>
+</head>
+<body>
+    <script>
+        console.log("You enter a dark room with two doors. Do you go through door #1 or door #2");
+        var door = prompt("> ");
+
+        if (door == "1") {
+            console.log("There's a giant bear here eating a cheese cake. What do you do?");
+            console.log("1.Take the cake");
+            console.log("2. Scream at the bear.");
+
+            var bear = prompt("> ");
+
+            if (bear == "1")
+                console.og("The bear eats your face off. Good job!");
+            else if (bear == "2")
+                console.log("the bear eats your legs off, Good job!");
+            else 
+                 console.log(`Well, doing ${bear} is probably better. Bear runs away.`);
+        }
+        
+        else if (door == "2") {
+            console.log("You stare into the endless abys at Cthuhlu's retina");
+            console.log("1. Bluberries.");
+            console.log("2. Yellow jacket clothespins.");
+            console.log("3. Understanding revolvers yelling melodies.");
+
+            var insanity = prompt("> ");
+
+            if (insanity == "1" || insanity == "2") {
+                console.log("The insanity rots your eyes into a pool of muck. Good job.");
+            
+            }
+        }
+        else {
+            console.log("You stumble around and fall on a down a hole( and die. Good job!");
+        }
+
+        var message = prompt("?", "What do you think?");
+        switch(message) {
+            case1(message = 1):
+            console.log("Good choice!");
+            break;
+            default:
+            console.log("No, no, no!")
+        }
+    </script>
+</body>
+</html>
