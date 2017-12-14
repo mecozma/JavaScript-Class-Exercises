@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0 auto;
+        }
+        .wrapper {
+            width: 600px;
+            height: 300px;
+            margin: 50px auto;
+            background-color: darkgrey;
+            border: 2px solid maroon;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+        }
+        .form {
+            width: 340px;
+            margin: 0 auto;
+            font-size: 1em;
+            background-color:beige;
+        }
+        input[type="text"] {
+            margin-bottom: .25em;
+            padding: .25em;
+            font-size: 1em;
+        }
+        input[type="submit"] {
+            display: inline-block;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4);
+            cursor: pointer;
+        }
+        legend {
+            font-weight: 700;
+        }
+        p {
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+   <div class="form">
+      <fieldset>
+      <legend>Check for Palindrome</legend>
+       <input type="text" id="stringInput" placeholder="Enter palindrome">
+       <input type="submit" id="submitButton" value="Hit me!">
+       </fieldset>
+   </form>
+   <p id="stringOutput">True  || false</p>
+    </div>
+    <script>
+        var stringInput = document.getElementById("stringInput").value;
+        function palindrome(str) {
+  var pattern = /[\W_]/g;
+  var newString = str.replace(pattern, "");
+  var reversed = newString.split("").reverse().join("");
+  if (newString.toLowerCase() === reversed.toLowerCase()) {
+  return true;
+  } else {
+    return false;
+  }
+}
+
+        document.getElementById('submitButton').addEventListener("click", function () {
+            
+            if (stringInput === 0) {
+                console.log("Empty");
+            } else {
+                console.log("Input valid");
+                palindrome(stringInput);
+            }
+            
+        })
+    </script>
+</body>
+</html>

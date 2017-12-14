@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0 auto;
+        }
+
+        .wrapper {
+            width: 600px;
+            height: 300px;
+            margin: 50px auto;
+            background-color: darkgrey;
+            border: 2px solid maroon;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+
+        .form {
+            width: 340px;
+            margin: 0 auto;
+            font-size: 1em;
+            background-color: beige;
+        }
+
+        input[type="text"] {
+            margin-bottom: .25em;
+            padding: .25em;
+            font-size: 1em;
+        }
+
+        input[type="submit"] {
+            display: inline-block;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+        }
+
+        legend {
+            font-weight: 700;
+        }
+
+        p {}
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="form">
+            <fieldset>
+                <legend>Capitalize first letter</legend>
+                <input type="text" id="stringInput" placeholder="Enter string">
+                <button id="submitButton">Hit me!</button>
+            </fieldset>
+        </div>
+        <p id="stringOutput">Output string:</p>
+    </div>
+    <script>
+        //collect data from the form
+        function getFormData() {
+            var stringValue = {
+                stringInput: document.getElementById("stringInput").value
+            }
+            console.log(stringValue);
+            return stringValue;
+        }
+
+        //capitalize function
+        function capitalize(str) {
+            var string = str.split(" ");
+            for (var i = 0; i < string.length; i++) {
+                var firstChar = string[i].slice(0, 1).toUpperCase();
+                var secondChar = string[i].slice(1).toLowerCase();
+                var final = firstChar + secondChar;
+                string[i] = final;
+            }
+            return string.join(" ");
+        }
+        //check if the input entered is valid
+        function checkInputIsValid(stringInput) {
+            if (stringInput.length === 0) {
+                alert("It's empty");
+                stringInput.focus();
+                stringInput.style.background = "yellow";
+                return false;
+            }
+            stringInput.style.background = "white";
+            console.log(x.value);
+            return true;
+        }
+
+        //return function with the capitalized string
+        function capitalizedString() {
+            if (checkInputIsValid()) {
+                console.log("works");
+                return capitalize(stringInput.value);
+            }
+        }
+        //event listener
+        document.getElementById("submitButton").addEventListener("click", function(){
+            var string = getFormData();
+            checkInputIsValid(string);
+        })
+    </script>
+</body>
+</html>

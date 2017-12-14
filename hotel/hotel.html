@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel</title>
+</head>
+<body>
+    <h1>Book a Hotel form</h1>
+    <form action="">
+        
+       <fieldset>
+       <legend>Booking form</legend>
+        Select a hotel:
+         <select name="hotel">
+    <option value="Hilton">Hilton</option>
+    <option value="Radisson">Radisson</option>
+    <option value="Lanigans">Lanigans</option>
+    <option value="TempleBar">TempleBar</option>
+  </select>
+       <br><br>
+       Select number of rooms:
+       <input type="text">
+        </fieldset>
+  <br><br>
+  <input type="submit" value="Book in">
+       <input type="submit" value = "Book out">
+        
+    </form>
+    <div class="hotelInfo">
+        <p>Total number of rooms:</p>
+        <p>Nr rooms available:</p>
+        <p>Nr of rooms booked:</p>
+    </div>
+    <script>
+        var hotel= {
+            hotelName: "Hilton",
+            totalRooms: 10,
+            availableRooms: function() {
+            var available = this.totalRooms - this.bookedRooms();
+        },
+            bookedRooms: function() {
+            var booked = this.totalRooms - this.availableRooms;
+            console.log(bookedRooms());
+        },
+          bookIn: function() {
+                if (availableRooms > -1) {
+                    totalRooms = totalRooms - 1;
+                    console.log("Your checkin request has been accepted. We hope you'll have a good experience!");
+                } else {
+                    console.log ("We are sorry. There are no rooms available in out Hotel. Please try another Hotel");
+                }
+            },
+            bookOut:  function() {
+                totalRooms = totalRooms + 1;
+                console.log("Your checkout request has been registered. We hoe you had a good experience!");
+            }
+            
+        };
+        hotel.totalRooms = -1;
+    
+    </script>
+</body>
+</html> 

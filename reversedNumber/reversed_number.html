@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0 auto;
+        }
+        .wrapper {
+            width: 600px;
+            height: 300px;
+            margin: 50px auto;
+            background-color: darkgrey;
+            border: 2px solid maroon;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+        }
+        form {
+            width: 340px;
+            margin: 0 auto;
+            font-size: 1em;
+            background-color:beige;
+        }
+        input[type="text"] {
+            margin-bottom: .25em;
+            padding: .25em;
+            font-size: 1em;
+        }
+        input[type="submit"] {
+            display: inline-block;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4);
+            cursor: pointer;
+        }
+        legend {
+            font-weight: 700;
+        }
+        p {
+            
+        }
+    </style>
+</head>
+<body>
+   <div class="wrapper">
+   <form onSubmit="return checkInput();" method="post">
+      <fieldset>
+      <legend>Reverse a number</legend>
+       <input type="text" id="numberInput" placeholder="Enter the number">
+       <input type="submit" value="Hit me!">
+       </fieldset>
+   </form>
+   <p id="numberOutput">Reversed number</p>
+    </div>
+    <script>
+         var n = 1234;
+        function reverseInt(num) {
+
+            var reversedNumer = 0;
+            while (num != 0) {
+                reversedNumer *= 10;
+                reversedNumer += num % 10;
+                num = Math.floor(num / 10);
+            }
+            return reversedNumer;
+        }
+        console.log(reverseInt(n));
+    </script>
+</body>
+</html>
+      

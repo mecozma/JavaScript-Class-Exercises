@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0 auto;
+        }
+        .wrapper {
+            width: 600px;
+            height: 300px;
+            margin: 50px auto;
+            background-color: darkgrey;
+            border: 2px solid maroon;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+        }
+        form {
+            width: 340px;
+            margin: 0 auto;
+            font-size: 1em;
+            background-color:beige;
+        }
+        input[type="text"] {
+            margin-bottom: .25em;
+            padding: .25em;
+            font-size: 1em;
+        }
+        input[type="submit"] {
+            display: inline-block;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4);
+            cursor: pointer;
+        }
+        legend {
+            font-weight: 700;
+        }
+        p {
+            
+        }
+    </style>
+</head>
+<body>
+  <div class="wrapper">
+   <form onSubmit="return giveChange();" method="post">
+      <fieldset>
+      <legend>Change machine</legend>
+       <input type="text" id="moneyInput" placeholder="Enter amount">
+       <input type="submit" value="Hit me!">
+       </fieldset>
+   </form>
+   <p id="moneyOutput">Change:</p>
+    </div>
+    <script>
+        var x = document.getElementById("moneyInput");
+        var money = parseFloat(x.value);
+        var moneyOutput = document.getElementById("moneyOutput");
+        function checkInputIsValid() {
+            if (x.value.length === 0) {
+                alert("ITs empty");
+                x.focus();
+                x.style.background = "yellow";
+                return false;
+            }
+            x.style.background = "white";
+            console.log(x.value);
+            return true;
+        }
+
+        function coinMachine() {
+        var money = parseFloat(x.value);
+        while (money > 0) {
+            money = parseFloat(money);
+            if (money >=2) {
+                console.log(2);
+                updateParagraph(2);
+                money = money - 2;
+            } else if (money >= 1) {
+                console.log(1);
+                money = money - 1;
+            } else if (money >= 0.50) {
+                console.log(0.50);
+                money -= 0.50;
+            } else if (money >= 0.20) {
+                console.log(0.20);
+                money -= 0.20;
+            } else if (money >= 0.10) {
+                console.log(0.10);
+                money -= 0.10
+            } else if (money >= 0.05) {
+                console.log(0.05)
+                money -= 0.05;
+            } else if (money >= 0.02) {
+                console.log(0.02);
+                money -= 0.02;
+            } else if (money >= 0.01) {
+                console.log(0.01);
+                money -= 0.01;
+                break;
+            }
+        }
+        };
+
+        function giveChange() {
+            if(checkInputIsValid()) {
+                 coinMachine();
+            }
+        }
+        function updateParagraph(coinValue){
+            moneyOutput.innerText = coinValue; 
+        }
+    </script>
+</body>
+</html>
